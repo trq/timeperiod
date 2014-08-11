@@ -4,12 +4,34 @@ namespace Trq\TimePeriod;
 
 class Resolver
 {
+    /**
+     * hoursInDay
+     *
+     * @var int
+     */
     protected $hoursInDay = 24;
 
+    /**
+     * daysInWeek
+     *
+     * @var int
+     */
     protected $daysInWeek = 7;
 
+    /**
+     * minutes
+     *
+     * @var mixed
+     */
     protected $minutes;
 
+    /**
+     * toMinutes
+     *
+     * @param mixed $amount
+     * @param mixed $type
+     * @return void
+     */
     protected function toMinutes($amount, $type)
     {
         switch ($type) {
@@ -30,6 +52,12 @@ class Resolver
         return $amount * $expression;
     }
 
+    /**
+     * parse
+     *
+     * @param mixed $periodFormat
+     * @return void
+     */
     public function parse($periodFormat)
     {
         $periods = explode(' ', $periodFormat);
@@ -42,16 +70,33 @@ class Resolver
         }
     }
 
+    /**
+     * getMinutes
+     *
+     * @return void
+     */
     public function getMinutes()
     {
         return $this->minutes;
     }
 
+    /**
+     * setHoursInDay
+     *
+     * @param mixed $hours
+     * @return void
+     */
     public function setHoursInDay($hours)
     {
         $this->hoursInDay = $hours;
     }
 
+    /**
+     * setDaysInWeek
+     *
+     * @param mixed $days
+     * @return void
+     */
     public function setDaysInWeek($days)
     {
         $this->daysInWeek = $days;
