@@ -47,4 +47,10 @@ class ResolverSpec extends ObjectBehavior
         $this->parse('1w 1d 1h 1m');
         $this->getMinutes()->shouldReturn(11581);
     }
+
+    function it_should_simply_ignore_invalid()
+    {
+        $this->parse('1w 1d 4x 1h 1m');
+        $this->getMinutes()->shouldReturn(11581);
+    }
 }
