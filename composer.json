@@ -1,10 +1,25 @@
 {
+    "name": "trq/timeperiod",
+    "description": "Prse string representation of time into minutes.",
+    "homepage": "http://thorpesystems.com",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Tony R Quilkey",
+        "email": "trq@thorpesystems.com",
+        "homepage": "http://thorpesystems.com"
+    }],
     "require-dev": {
         "phpspec/phpspec": "~2.0"
     },
     "autoload": {
         "psr-0": {
             "Trq": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
         }
     }
 }
