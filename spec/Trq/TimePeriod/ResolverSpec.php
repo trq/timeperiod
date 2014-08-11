@@ -23,4 +23,10 @@ class ResolverSpec extends ObjectBehavior
         $this->parse('10h');
         $this->getMinutes()->shouldReturn(600);
     }
+
+    function it_should_parse_a_string_representing_hours_and_minutes()
+    {
+        $this->parse('10h 20m');
+        $this->getMinutes()->shouldReturn(620);
+    }
 }
