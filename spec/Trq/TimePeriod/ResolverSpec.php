@@ -53,4 +53,18 @@ class ResolverSpec extends ObjectBehavior
         $this->parse('1w 1d 4x 1h 1m');
         $this->getMinutes()->shouldReturn(11581);
     }
+
+    function it_should_provide_the_ability_to_configure_hours_in_day()
+    {
+        $this->setHoursInDay(8);
+        $this->parse('1d');
+        $this->getMinutes()->shouldReturn(480);
+    }
+
+    function it_should_provide_the_ability_to_configure_days_in_week()
+    {
+        $this->setDaysInWeek(5);
+        $this->parse('1w');
+        $this->getMinutes()->shouldReturn(7200);
+    }
 }
