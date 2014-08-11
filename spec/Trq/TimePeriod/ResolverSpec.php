@@ -41,4 +41,10 @@ class ResolverSpec extends ObjectBehavior
         $this->parse('1h 1m');
         $this->getMinutes()->shouldReturn(61);
     }
+
+    function it_should_parse_a_string_representing_complex_times()
+    {
+        $this->parse('1w 1d 1h 1m');
+        $this->getMinutes()->shouldReturn(11581);
+    }
 }
