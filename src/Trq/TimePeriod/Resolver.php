@@ -6,19 +6,23 @@ class Resolver
 {
     protected $minutes;
 
-    public function parse($period)
+    public function parse($periodFormat)
     {
-        if (preg_match('/([0-9]*)(h|m){1}/', $period, $matches)) {
-            list(, $amount, $type) = $matches;
-            switch ($type) {
-                case 'h':
-                    $expression = 60;
-                    break;
-                case 'm':
-                    $expression = 1;
-                    break;
+        $periods = explode(' ', $periodFormat);
+
+        foreach ($periods as $period) {
+            if (preg_match('/([0-9]*)(h|m){1}/', $period, $matches)) {
+                list(, $amount, $type) = $matches;
+                switch ($type) {
+                    case 'h':
+                        $expression = 60;
+                        break;
+                    case 'm':
+                        $expression = 1;
+                        break;
+                }
+                $this->minutes += $amount * $expression;
             }
-            $this->minutes = $amount * $expression;
         }
     }
 
