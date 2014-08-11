@@ -1,6 +1,6 @@
 # TimePeriod
 
-A package for converting string like "1d 4h" into a common representation. eg; 1680 (minutes)
+Parse string representation of time into minutes.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Install via composer
 composer require 'trq/timeperiod:1.0.*@dev'
 ```
 
-# Usage
+## Usage
 
 ```php
 <?php
