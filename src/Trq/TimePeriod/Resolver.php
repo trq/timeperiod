@@ -35,7 +35,8 @@ class Resolver
         $periods = explode(' ', $periodFormat);
 
         foreach ($periods as $period) {
-            if (preg_match('/([0-9]*)(w|d|h|m){1}/', $period, $matches)) {
+            if (preg_match('/([0-9.]*)(w|d|h|m){1}/', $period, $matches)) {
+                var_dump($matches);
                 list(, $amount, $type) = $matches;
                 $this->minutes += $this->toMinutes($amount, $type);
             }

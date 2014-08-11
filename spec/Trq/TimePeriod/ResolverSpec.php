@@ -67,4 +67,22 @@ class ResolverSpec extends ObjectBehavior
         $this->parse('1w');
         $this->getMinutes()->shouldReturn(7200);
     }
+
+    function it_should_parse_minutes_decimals()
+    {
+        $this->parse('1.5m');
+        $this->getMinutes()->shouldReturn((double) 1.5);
+    }
+
+    function it_should_parse_hours_decimals()
+    {
+        $this->parse('1.5h');
+        $this->getMinutes()->shouldReturn((double) 90);
+    }
+
+    function it_should_parse_hours_and_minutes_decimals()
+    {
+        $this->parse('1.5h 30m');
+        $this->getMinutes()->shouldReturn((double) 120);
+    }
 }
