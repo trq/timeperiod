@@ -8,7 +8,18 @@ class Resolver
 
     public function parse($period)
     {
-        $this->minutes = (int) substr($period, 0, -1);
+        if (preg_match('/([0-9]*)(h|m){1}/', $period, $matches)) {
+            list(, $amount, $type) = $matches;
+            switch ($type) {
+                case 'h':
+                    $expression = 60;
+                    break;
+                case 'm':
+                    $expression = 1;
+                    break;
+            }
+            $this->minutes = $amount * $expression;
+        }
     }
 
     public function getMinutes()
