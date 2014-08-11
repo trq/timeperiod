@@ -1,6 +1,6 @@
 {
     "name": "trq/timeperiod",
-    "description": "Prse string representation of time into minutes.",
+    "description": "Parse string representation of time into minutes.",
     "homepage": "http://thorpesystems.com",
     "type": "library",
     "license": "MIT",
