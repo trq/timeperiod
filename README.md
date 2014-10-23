@@ -7,7 +7,7 @@ Parse string representation of time into minutes.
 Install via composer
 
 ```
-composer require 'trq/timeperiod:1.0.*@dev'
+composer require 'trq/timeperiod'
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ composer require 'trq/timeperiod:1.0.*@dev'
 
 echo (new Trq\TimePeriod\Resolver)
     ->parse('1h 20m')
-    ->gitMinutes(); // 80
+    ->getMinutes(); // 80
 ```
 
 More examples can be found in spec/Trq/TimePeriod/ResolverSpec.php
